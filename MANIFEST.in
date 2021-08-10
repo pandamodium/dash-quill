@@ -1,0 +1,11 @@
+include dash_quill/dash_quill.min.js
+include dash_quill/dash_quill.min.js.map
+include dash_quill/async-*.js
+include dash_quill/async-*.js.map
+include dash_quill/*-shared.js
+include dash_quill/*-shared.js.map
+include dash_quill/metadata.json
+include dash_quill/package-info.json
+include README.md
+include LICENSE
+include package.json
