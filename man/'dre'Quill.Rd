@@ -10,14 +10,22 @@ ExampleComponent is an example component. It takes a property, `label`, and di
 }
 
 \usage{
-'dre'Quill(id=NULL, hasToolbar=NULL, value=NULL)
+'dre'Quill(id=NULL, charCount=NULL, hasToolbar=NULL, maxLength=NULL,
+modules=NULL, value=NULL)
 }
 
 \arguments{
 \item{id}{Character. The ID used to identify this component in Dash callbacks.
 slateContent={SlateRTE.deserializeHTMLString(value)}}
 
+\item{charCount}{Numeric. The number of charaters in the editor (excl HTML)}
+
 \item{hasToolbar}{Logical. A label that will be printed when this component is rendered.}
+
+\item{maxLength}{Numeric. The value displayed in the input.}
+
+\item{modules}{Named list. The toolbar options modules.
+Should be {'toolbar':[list of options]}}
 
 \item{value}{Character. The value displayed in the input.}
 }

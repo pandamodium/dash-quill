@@ -17,18 +17,28 @@ Keyword arguments:
     The ID used to identify this component in Dash callbacks.
     slateContent={SlateRTE.deserializeHTMLString(value)}.
 
-- hasToolbar (boolean; optional):
+- charCount (number; optional):
+    The number of charaters in the editor (excl HTML).
+
+- hasToolbar (boolean; default True):
     A label that will be printed when this component is rendered.
+
+- maxLength (number; default 140):
+    The value displayed in the input.
+
+- modules (dict; default {    toolbar: [    [{ 'font': [] }],    [{size: []}],    ['bold', 'italic', 'underline'],    [{'list': 'ordered'}, {'list': 'bullet'}],    //['link', 'image'],    //['clean']    ],      clipboard: {    // toggle to add extra line breaks when pasting HTML:    matchVisual: False,    }}):
+    The toolbar options modules.  Should be {'toolbar':[list of
+    options]}.
 
 - value (string; optional):
     The value displayed in the input."""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, hasToolbar=Component.UNDEFINED, value=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'hasToolbar', 'value']
+    def __init__(self, id=Component.UNDEFINED, hasToolbar=Component.UNDEFINED, value=Component.UNDEFINED, maxLength=Component.UNDEFINED, charCount=Component.UNDEFINED, modules=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'charCount', 'hasToolbar', 'maxLength', 'modules', 'value']
         self._type = 'Quill'
         self._namespace = 'dash_quill'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'hasToolbar', 'value']
+        self.available_properties = ['id', 'charCount', 'hasToolbar', 'maxLength', 'modules', 'value']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()

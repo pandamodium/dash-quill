@@ -16,7 +16,11 @@
           "name": "bool"
         },
         "required": false,
-        "description": "A label that will be printed when this component is rendered."
+        "description": "A label that will be printed when this component is rendered.",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
       },
       "value": {
         "type": {
@@ -24,6 +28,35 @@
         },
         "required": false,
         "description": "The value displayed in the input."
+      },
+      "maxLength": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The value displayed in the input.",
+        "defaultValue": {
+          "value": "140",
+          "computed": false
+        }
+      },
+      "charCount": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The number of charaters in the editor (excl HTML)"
+      },
+      "modules": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "The toolbar options modules.\r\nShould be {'toolbar':[list of options]}",
+        "defaultValue": {
+          "value": "{\r\n    toolbar: [\r\n    [{ 'font': [] }],\r\n    [{size: []}],\r\n    ['bold', 'italic', 'underline'],\r\n    [{'list': 'ordered'}, {'list': 'bullet'}],\r\n    //['link', 'image'],\r\n    //['clean']\r\n    ],  \r\n    clipboard: {\r\n    // toggle to add extra line breaks when pasting HTML:\r\n    matchVisual: false,\r\n    }\r\n}",
+          "computed": false
+        }
       },
       "setProps": {
         "type": {

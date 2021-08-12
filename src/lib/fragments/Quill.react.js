@@ -15,29 +15,63 @@ export default class Quill extends Component {
   
     constructor (props) {
         super(props)
-        this.state = { editorHtml: '', theme: 'snow' }
+        this.state = { editorHtml: this.props.value, theme: 'snow' }
         this.handleChange = this.handleChange.bind(this)
+        this.reactQuillRef = React.createRef();
+        this.quillRef = null;      // Quill instance
+        this.newToolbar = this.props.modules
       }
-      
-      handleChange (html) {
+
+      handleChange (html, delta, source, editor) {
+        console.log('TRIGGERED HANDLECHANGE')
+        //if (editor.getLength() < this.props.maxLength) {
+          console.log('LENGTH IS GOOD')
           this.setState({ editorHtml: html });
-        this.props.setProps({value: html})
+          this.props.setProps({value: html});
+          this.props.setProps({charCount: editor.getLength()})
+        //}
       }
-      
+
+      checkCharacterCount = (event) => {
+        console.log('TRIGGERED chechchar');
+
+        const unprivilegedEditor = this.reactQuillRef.current.unprivilegedEditor;
+        if (unprivilegedEditor.getLength() > this.props.maxLength && event.key !== 'Backspace')
+          event.preventDefault();
+      };
+
       handleThemeChange (newTheme) {
         if (newTheme === "core") newTheme = null;
         this.setState({ theme: newTheme })
       }
-      
+      componentDidMount() {
+        console.log('componentDidMount')
+        this.attachQuillRefs()
+      }
+    
+      componentDidUpdate() {
+        console.log('componentDidMount')
+        this.attachQuillRefs()
+      }
+    
+      attachQuillRefs = () => {
+        
+        if (typeof this.reactQuillRef.getEditor !== 'function') return;
+        console.log('Triggered GETEDITOR')
+        this.quillRef = this.reactQuillRef.getEditor();
+      }      
       render () {
         return (
           <div>
             <ReactQuill
+              ref={this.reactQuillRef}
               id = {this.props.id} 
               theme={this.state.theme}
+              onKeyDown={this.checkCharacterCount}
               onChange={this.handleChange}
               value={this.state.editorHtml}
-              modules={this.props.hasToolbar ? Quill.modules : Quill.modulesNoToolbar}
+              //modules={this.props.hasToolbar ? Quill.modules : Quill.modulesNoToolbar}
+              modules = {this.props.modules}
               formats={Quill.formats}
               bounds={'.app'}
               placeholder={this.props.placeholder}

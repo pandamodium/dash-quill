@@ -1,24 +1,50 @@
 import dash_quill
 import dash
-from dash.dependencies import Input, Output
+from dash.dependencies import Input, Output, State
 import dash_html_components as html
 
 app = dash.Dash(__name__)
-
+quill_mods = [
+    [{ 'header': '1'}, {'header': '2'}, { 'font': [] }],
+    [{'size': []}],
+    ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+    [{'list': 'ordered'}, {'list': 'bullet'}, 
+        {'indent': '-1'}, {'indent': '+1'}],
+    ['link', 'image'],
+    ['clean']
+]
 app.layout = html.Div([
     dash_quill.Quill(
         id='input',
-        value='my-value',
+        value='my-value-is different',
         hasToolbar=True,
+        maxLength=70,
+        modules={'toolbar':quill_mods,'clipboard':{'matchVisual': False,}}
 #        label='my-label'
     ),
-    html.Div(id='output')
+    html.Div(id='output'),
+    dash_quill.Quill(
+        id='input2',
+        value='my-value',
+        hasToolbar=True,
+        maxLength=70,
+        modules={'toolbar':False,'clipboard':{'matchVisual': False,}}
+#        label='my-label'
+    ),
+    html.Br(),
+        dash_quill.Quill(
+        id='input3',
+        value='my-value',
+        hasToolbar=True,
+        maxLength=70,
+#        label='my-label'
+    ),
 ])
 
 
-@app.callback(Output('output', 'children'), [Input('input', 'value')])
-def display_output(value):
-    return 'You have entered {}'.format(value)
+@app.callback(Output('output', 'children'), [Input('input', 'value')],[State('input', 'charCount')])
+def display_output(value,charCount):
+    return 'You have entered {0} and nochars is {1}'.format(value,charCount)
 
 
 if __name__ == '__main__':

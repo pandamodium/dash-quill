@@ -19,7 +19,24 @@ export default class Quill extends Component {
     }
 }
 
-Quill.defaultProps = {};
+Quill.defaultProps = {
+    hasToolbar: true,
+    maxLength: 140,
+    modules: {
+        toolbar: [
+        [{ 'font': [] }],
+        [{size: []}],
+        ['bold', 'italic', 'underline'],
+        [{'list': 'ordered'}, {'list': 'bullet'}],
+        //['link', 'image'],
+        //['clean']
+        ],  
+        clipboard: {
+        // toggle to add extra line breaks when pasting HTML:
+        matchVisual: false,
+        }
+    },
+};
 
 Quill.propTypes = {
     /**
@@ -40,6 +57,21 @@ Quill.propTypes = {
       */
      value: PropTypes.string,
  
+     /**
+      * The value displayed in the input.
+      */
+      maxLength: PropTypes.number,
+
+     /**
+      * The number of charaters in the editor (excl HTML)
+      */
+      charCount: PropTypes.number,
+     /**
+      * The toolbar options modules.
+      * Should be {'toolbar':[list of options]}
+      */
+      modules: PropTypes.object,
+
      /**
       * Dash-assigned callback that should be called to report property changes
       * to Dash, to make them available for callbacks.

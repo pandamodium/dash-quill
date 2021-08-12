@@ -1,6 +1,6 @@
 {
   "name": "dash_quill",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Quill-Based Rich Text Editor Component for Dash",
   "main": "build/index.js",
   "scripts": {
