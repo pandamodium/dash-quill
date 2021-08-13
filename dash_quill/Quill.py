@@ -20,9 +20,6 @@ Keyword arguments:
 - charCount (number; optional):
     The number of charaters in the editor (excl HTML).
 
-- hasToolbar (boolean; default True):
-    A label that will be printed when this component is rendered.
-
 - maxLength (number; default 140):
     The value displayed in the input.
 
@@ -33,12 +30,12 @@ Keyword arguments:
 - value (string; optional):
     The value displayed in the input."""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, hasToolbar=Component.UNDEFINED, value=Component.UNDEFINED, maxLength=Component.UNDEFINED, charCount=Component.UNDEFINED, modules=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'charCount', 'hasToolbar', 'maxLength', 'modules', 'value']
+    def __init__(self, id=Component.UNDEFINED, value=Component.UNDEFINED, maxLength=Component.UNDEFINED, charCount=Component.UNDEFINED, modules=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'charCount', 'maxLength', 'modules', 'value']
         self._type = 'Quill'
         self._namespace = 'dash_quill'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'charCount', 'hasToolbar', 'maxLength', 'modules', 'value']
+        self.available_properties = ['id', 'charCount', 'maxLength', 'modules', 'value']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()

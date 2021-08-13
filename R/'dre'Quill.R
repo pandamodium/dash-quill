@@ -1,8 +1,8 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
-'dre'Quill <- function(id=NULL, charCount=NULL, hasToolbar=NULL, maxLength=NULL, modules=NULL, value=NULL) {
+'dre'Quill <- function(id=NULL, charCount=NULL, maxLength=NULL, modules=NULL, value=NULL) {
     
-    props <- list(id=id, charCount=charCount, hasToolbar=hasToolbar, maxLength=maxLength, modules=modules, value=value)
+    props <- list(id=id, charCount=charCount, maxLength=maxLength, modules=modules, value=value)
     if (length(props) > 0) {
         props <- props[!vapply(props, is.null, logical(1))]
     }
@@ -10,7 +10,7 @@
         props = props,
         type = 'Quill',
         namespace = 'dash_quill',
-        propNames = c('id', 'charCount', 'hasToolbar', 'maxLength', 'modules', 'value'),
+        propNames = c('id', 'charCount', 'maxLength', 'modules', 'value'),
         package = 'dashQuill'
         )
 

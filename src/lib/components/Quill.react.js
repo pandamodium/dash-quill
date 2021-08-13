@@ -20,7 +20,7 @@ export default class Quill extends Component {
 }
 
 Quill.defaultProps = {
-    hasToolbar: true,
+    //hasToolbar: true,
     maxLength: 140,
     modules: {
         toolbar: [
@@ -45,12 +45,9 @@ Quill.propTypes = {
      */
      id: PropTypes.string,
 
-     /**
-      * A label that will be printed when this component is rendered.
-      */
  //    onChange: PropTypes.func,
  
-     hasToolbar: PropTypes.bool,
+     //hasToolbar: PropTypes.bool,
  
      /**
       * The value displayed in the input.

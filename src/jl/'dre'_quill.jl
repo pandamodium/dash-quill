@@ -15,14 +15,13 @@ Keyword arguments:
 - `id` (String; optional): The ID used to identify this component in Dash callbacks.
 slateContent={SlateRTE.deserializeHTMLString(value)}
 - `charCount` (Real; optional): The number of charaters in the editor (excl HTML)
-- `hasToolbar` (Bool; optional): A label that will be printed when this component is rendered.
 - `maxLength` (Real; optional): The value displayed in the input.
 - `modules` (Dict; optional): The toolbar options modules.
 Should be {'toolbar':[list of options]}
 - `value` (String; optional): The value displayed in the input.
 """
 function 'dre'_quill(; kwargs...)
-        available_props = Symbol[:id, :charCount, :hasToolbar, :maxLength, :modules, :value]
+        available_props = Symbol[:id, :charCount, :maxLength, :modules, :value]
         wild_props = Symbol[]
         return Component("'dre'_quill", "Quill", "dash_quill", available_props, wild_props; kwargs...)
 end

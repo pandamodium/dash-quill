@@ -10,8 +10,8 @@ ExampleComponent is an example component. It takes a property, `label`, and di
 }
 
 \usage{
-'dre'Quill(id=NULL, charCount=NULL, hasToolbar=NULL, maxLength=NULL,
-modules=NULL, value=NULL)
+'dre'Quill(id=NULL, charCount=NULL, maxLength=NULL, modules=NULL,
+value=NULL)
 }
 
 \arguments{
@@ -19,8 +19,6 @@ modules=NULL, value=NULL)
 slateContent={SlateRTE.deserializeHTMLString(value)}}
 
 \item{charCount}{Numeric. The number of charaters in the editor (excl HTML)}
-
-\item{hasToolbar}{Logical. A label that will be printed when this component is rendered.}
 
 \item{maxLength}{Numeric. The value displayed in the input.}
 
