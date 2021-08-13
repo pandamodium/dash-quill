@@ -2,7 +2,7 @@
 name = "DashQuill"
 uuid = "1b08a953-4be3-4667-9a23-02b89470ab1b"
 authors = ["Amien Johaadien <pandamodium@gmail.com>"]
-version = "0.0.2"
+version = "0.0.3"
 
 [deps]
 Dash = "1b08a953-4be3-4667-9a23-3db579824955"

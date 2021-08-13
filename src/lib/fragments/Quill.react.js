@@ -23,18 +23,18 @@ export default class Quill extends Component {
     }
 
     handleChange(html, delta, source, editor) {
-        console.log('TRIGGERED HANDLECHANGE');
-            //if (editor.getLength() < this.props.maxLength) {
+        console.log('TRIGGERED handleChange');
+        //if (editor.getLength() < this.props.maxLength) {
         console.log('LENGTH IS GOOD');
         console.log(this.props.value);
-        this.setState({ editorHtml: html });
+        //this.setState({ editorHtml: html });
         this.props.setProps({ value: html });
         this.props.setProps({ charCount: editor.getLength() })
             //}
     }
 
     checkCharacterCount = (event) => {
-        console.log('TRIGGERED checkchar');
+        console.log('TRIGGERED checkCharacterCount');
 
         const unprivilegedEditor = this.reactQuillRef.current.unprivilegedEditor;
         if (unprivilegedEditor.getLength() > this.props.maxLength && event.key !== 'Backspace')
@@ -51,7 +51,7 @@ export default class Quill extends Component {
     }
 
     componentDidUpdate() {
-        console.log('componentDidMount')
+        console.log('componentDidUpdate')
         this.attachQuillRefs()
     }
 

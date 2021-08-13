@@ -18,7 +18,6 @@ app.layout = html.Div([
     dash_quill.Quill(
         id='input',
         value='my-value-is different',
-        hasToolbar=True,
         maxLength=70,
         modules={'toolbar':quill_mods,'clipboard':{'matchVisual': False,}}
 #        label='my-label'
@@ -27,7 +26,6 @@ app.layout = html.Div([
     dash_quill.Quill(
         id='input2',
         value='my-value',
-        hasToolbar=True,
         maxLength=70,
         modules={'toolbar':False,'clipboard':{'matchVisual': False,}}
 #        label='my-label'
@@ -36,7 +34,6 @@ app.layout = html.Div([
         dash_quill.Quill(
         id='input3',
         value='my-value',
-        hasToolbar=True,
         maxLength=70,
 #        label='my-label'
     ),
