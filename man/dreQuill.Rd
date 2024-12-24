@@ -1,7 +1,7 @@
 % Auto-generated: do not edit by hand
-\name{quill}
+\name{dreQuill}
 
-\alias{quill}
+\alias{dreQuill}
 
 \title{Quill component}
 
@@ -10,7 +10,7 @@ ExampleComponent is an example component. It takes a property, `label`, and disp
 }
 
 \usage{
-quill(id=NULL, charCount=NULL, maxLength=NULL, modules=NULL,
+dreQuill(id=NULL, charCount=NULL, maxLength=NULL, modules=NULL,
 value=NULL)
 }
 

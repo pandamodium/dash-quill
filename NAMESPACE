@@ -1,5 +1,3 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
-export(Quill)
-export(quill)
-export(Quill)
+export(dreQuill)
