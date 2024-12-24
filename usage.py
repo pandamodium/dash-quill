@@ -1,10 +1,7 @@
 import dash_quill
-import dash
-import dash_core_components as dcc
-from dash.dependencies import Input, Output, State
-import dash_html_components as html
+from dash import Dash, callback, dcc, html, Input, Output, State
 
-app = dash.Dash(__name__)
+app = Dash(__name__)
 quill_mods = [
     [{ 'header': '1'}, {'header': '2'}, { 'font': [] }],
     [{'size': []}],
@@ -42,18 +39,18 @@ app.layout = html.Div([
 ])
 
 
-@app.callback(Output('output', 'children'), [Input('input', 'value')],[State('input', 'charCount')])
+@callback(Output('output', 'children'), [Input('input', 'value')],[State('input', 'charCount')])
 def display_output(value,charCount):
     return 'You have entered {0} and nochars is {1}'.format(value,charCount)
 
-@app.callback(Output('test-text', 'value'), [Input('input', 'value')],[State('input', 'charCount')])
+@callback(Output('test-text', 'value'), [Input('input', 'value')],[State('input', 'charCount')])
 def display_output2(value,charCount):
     return 'You have entered {0} and nochars is {1}'.format(value,charCount)
 
-@app.callback(Output('input3', 'value'), [Input('input', 'value')],[State('input', 'charCount')])
+@callback(Output('input3', 'value'), [Input('input', 'value')],[State('input', 'charCount')])
 def display_output2(value,charCount):
     return 'You have entered {0} and nochars is {1}'.format(value,charCount)
 
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run(debug=True)
