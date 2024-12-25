@@ -163,7 +163,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines on contributing to this 
 
 ## Community
 
-- Report bugs or request features on [GitHub Issues](https://github.com/plotly/dash-quill/issues)
+- Report bugs or request features on [GitHub Issues](https://github.com/pandamodium/dash-quill/issues)
 - Get help on the [Dash Community Forum](https://community.plotly.com/c/dash)
 - Find more Dash components at [GitHub Topics: plotly-dash](https://github.com/topics/plotly-dash)
 
