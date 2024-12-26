@@ -1,6 +1,7 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
-'dre'Quill <- function(id=NULL, charCount=NULL, maxLength=NULL, modules=NULL, value=NULL) {
+#' @export
+dreQuill <- function(id=NULL, charCount=NULL, maxLength=NULL, modules=NULL, value=NULL) {
     
     props <- list(id=id, charCount=charCount, maxLength=maxLength, modules=modules, value=value)
     if (length(props) > 0) {

@@ -23,26 +23,25 @@ Keyword arguments:
 - maxLength (number; default 140):
     The value displayed in the input.
 
-- modules (dict; default {    toolbar: [    [{ 'font': [] }],    [{size: []}],    ['bold', 'italic', 'underline'],    [{'list': 'ordered'}, {'list': 'bullet'}],    //['link', 'image'],    //['clean']    ],      clipboard: {    // toggle to add extra line breaks when pasting HTML:    matchVisual: False,    }}):
-    The toolbar options modules.  Should be {'toolbar':[list of
+- modules (dict; default {    toolbar: [    [{ 'font': [] }],    [{size: []}],    ['bold', 'italic', 'underline'],    [{'list': 'ordered'}, {'list': 'bullet'}],    //['link', 'image'],    //['clean']    ],      clipboard: {    // toggle to add extra line breaks when pasting HTML:    matchVisual: False,    }}):
+    The toolbar options modules. Should be {'toolbar':[list of
     options]}.
 
 - value (string; optional):
     The value displayed in the input."""
+    _children_props = []
+    _base_nodes = ['children']
+    _namespace = 'dash_quill'
+    _type = 'Quill'
     @_explicitize_args
     def __init__(self, id=Component.UNDEFINED, value=Component.UNDEFINED, maxLength=Component.UNDEFINED, charCount=Component.UNDEFINED, modules=Component.UNDEFINED, **kwargs):
         self._prop_names = ['id', 'charCount', 'maxLength', 'modules', 'value']
-        self._type = 'Quill'
-        self._namespace = 'dash_quill'
         self._valid_wildcard_attributes =            []
         self.available_properties = ['id', 'charCount', 'maxLength', 'modules', 'value']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
-        _locals.update(kwargs)  # For wildcard attrs
-        args = {k: _locals[k] for k in _explicit_args if k != 'children'}
-        for k in []:
-            if k not in args:
-                raise TypeError(
-                    'Required argument `' + k + '` was not specified.')
+        _locals.update(kwargs)  # For wildcard attrs and excess named props
+        args = {k: _locals[k] for k in _explicit_args}
+
         super(Quill, self).__init__(**args)

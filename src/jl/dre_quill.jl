@@ -1,9 +1,9 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
-export 'dre'_quill
+export dre_quill
 
 """
-    'dre'_quill(;kwargs...)
+    dre_quill(;kwargs...)
 
 A Quill component.
 ExampleComponent is an example component.
@@ -20,9 +20,9 @@ slateContent={SlateRTE.deserializeHTMLString(value)}
 Should be {'toolbar':[list of options]}
 - `value` (String; optional): The value displayed in the input.
 """
-function 'dre'_quill(; kwargs...)
+function dre_quill(; kwargs...)
         available_props = Symbol[:id, :charCount, :maxLength, :modules, :value]
         wild_props = Symbol[]
-        return Component("'dre'_quill", "Quill", "dash_quill", available_props, wild_props; kwargs...)
+        return Component("dre_quill", "Quill", "dash_quill", available_props, wild_props; kwargs...)
 end
 
